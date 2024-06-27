@@ -1,0 +1,40 @@
+<div>
+  <h2>Interview Questions</h2>
+  <form (submit)="submitForm()">
+    <label for="city">City:</label>
+    <select id="city" name="city" [(ngModel)]="formData.city" required>
+      <option value="">Select City</option>
+      <option value="maduari">Madurai</option>
+      <option value="chennai">chennai</option>
+    </select>
+    <br><br>
+    
+    <label for="position">Position:</label>
+    <select id="position" name="position" [(ngModel)]="formData.position" required>
+      <option value="">Select Position</option>
+      <option value="Frontend Developer">Frontend Developer</option>
+      <option value="Backend Developer">Backend Developer</option>
+    </select>
+    <br><br>
+    
+    <label for="experience">Experience:</label>
+    <select id="experience" name="experience" [(ngModel)]="formData.experience" required>
+      <option value="">Select Experience</option>
+      <option value="Entry Level">Entry Level(0-2 years)</option>
+      <option value="Intermediate">Intermediate(0-6 years)</option>
+      <option value="Senior">Senior(7 or 7 + years)</option>
+    </select>
+    <br><br>
+    
+    <button type="submit">Submit</button>
+  </form>
+
+  <div *ngIf="submitted">
+    <h3>Interview Questions for {{ formData.position }} in {{ formData.city }}</h3>
+    <ul>
+      <li *ngFor="let question of interviewQuestions">
+        {{ question }}
+      </li>
+    </ul>
+  </div>
+</div>

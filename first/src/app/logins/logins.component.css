@@ -1,0 +1,44 @@
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px black
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid white;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: white;
+    cursor: not-allowed;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  

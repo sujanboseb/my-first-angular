@@ -1,0 +1,49 @@
+<h1>Welcome to the signup of Career Scope</h1>
+<br>
+<div container="siuu">
+  <form [formGroup]="contactform" (ngSubmit)="submitform()">
+    <p>
+      <label for="names">Name</label>
+      <input type="text" id="names" name="names" formControlName="names">
+      <span *ngIf="contactform.controls.names.invalid && (contactform.controls.names.dirty || contactform.controls.names.touched)">
+        Name is required
+        <span *ngIf="contactform.controls.names.errors?.['required']">
+          Please enter a name
+        </span>
+      </span>
+    </p>
+    <p>
+      <label for="Department">Department</label>
+      <select id="Department" name="department" formControlName="Department">
+        <option value="">Select Department</option>
+        <option value="IT">IT</option>
+        <option value="HR">HR</option>
+        <option value="Finance">Finance</option>
+        <option value="Marketing">Marketing</option>
+      </select>
+      <span *ngIf="contactform.controls.Department.invalid && (contactform.controls.Department.dirty || contactform.controls.Department.touched)">
+        Please select a department
+      </span>
+    </p>
+    <p>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" formControlName="username">
+      <span *ngIf="contactform.controls.username.invalid && (contactform.controls.username.dirty || contactform.controls.username.touched)">
+        Username is required
+        <span *ngIf="contactform.controls.username.errors?.['minlength']">
+          Enter a username with at least 5 characters
+        </span>
+      </span>
+    </p>
+    <p>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" formControlName="password">
+      <span *ngIf="contactform.controls.password.invalid && (contactform.controls.password.dirty || contactform.controls.password.touched)">
+        Password must contain at least one uppercase letter, one lowercase letter, one digit, and be at least 8 characters long
+      </span>
+    </p>
+    <p>
+      <button type="submit" [disabled]="!contactform.valid">Submit</button>
+    </p>
+  </form>
+</div>

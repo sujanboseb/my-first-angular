@@ -1,0 +1,27 @@
+<div>
+  <h2>Your Courses:</h2>
+  <ul>
+    <li *ngFor="let course of user.courses">{{ course }}</li>
+  </ul>
+
+  <hr>
+
+  <h2>Filter Jobs:</h2>
+  <label for="jobFilter">Enter a job title:</label>
+  <input type="text" id="jobFilter" [(ngModel)]="user.selectedJob" (input)="filterJobs(user.selectedJob)">
+  <br><br>
+
+  <div *ngIf="filteredJobs.length > 0">
+    <h2>Matching Jobs:</h2>
+    <ul>
+      <li *ngFor="let job of filteredJobs">
+        <strong>{{ job.name }}</strong> - Location: {{ job.location }}
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <h2>Get Your Interview Questions</h2>
+  <a routerLink="/interview-score">Get your interview questions</a>
+</div>
